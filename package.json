@@ -4,7 +4,7 @@
   "description": "Creating My first Node Server",
   "main": "server.js",
   "scripts": {
-    "test": "node server.js",
+    "test": "mocha --exit",
     "start": "node server.js"
   },
   "repository": {
@@ -20,5 +20,10 @@
   "homepage": "https://github.com/ashwanikumar1414/MyFirstNodeServer#readme",
   "dependencies": {
     "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "chai": "^6.2.2",
+    "mocha": "^11.7.6",
+    "supertest": "^7.2.2"
   }
 }
