@@ -1,0 +1,24 @@
+name: CI Workflow
+# Specify the events that trigger this workflow
+on:
+  push:
+    branches: [ main ] # Runs when code is pushed to the main branch
+  pull_request:
+    branches: [ main ] # Runs when a PR is opened against the main branch
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest # The type of runner to use
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4 # Essential step to pull your code into the runner
+
+      - name: Run a Script
+        run: echo "The workflow was triggered by a ${{ github.event_name }} event!"
+
+      - name: Install Dependencies
+        run: npm ci # Replace with your project's install command
+
+      - name: Run Tests
+        run: npm test # Replace with your project's test command
+
